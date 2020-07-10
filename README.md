@@ -1,5 +1,5 @@
 # automate-model-train
-Repo used as module for automating ML projects using GitHub actions.
+Repo used as module for automating ML projects training using GitHub actions.
 
 # Details
 
