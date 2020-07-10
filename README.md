@@ -3,7 +3,7 @@ Repo used as module for automating ML projects training using GitHub actions.
 
 # Details
 
-- Uses Flake8 for checking. Stop the build if there are Python syntax errors or undefined names
+- Uses Flake8 for linting. Stop the build if there are Python syntax errors or undefined names
 - Runs ```python train.py``` file for training ML model.
 - Saves metrix.txt and confusion_matrix.png in GitHub for display.
 
