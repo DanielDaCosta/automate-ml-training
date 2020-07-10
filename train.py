@@ -1,2 +1,3 @@
-def main() :
+def main():
+    print(cat)
     pass
