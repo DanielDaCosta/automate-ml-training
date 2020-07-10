@@ -17,6 +17,6 @@ Copy and paste repo into your new project. Updates happens in:
     branches: [ master ]
 ```
 
-# Acnowledgments
+# Acknowledgments
 - https://github.com/iterative/cml_base_case
 - https://towardsdatascience.com/what-data-scientists-need-to-know-about-devops-2f8bc6660284
