@@ -13,17 +13,18 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: docker://dvcorg/cml-py3:latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.7
+    # - name: Set up Python 3.7
+    #   uses: actions/setup-python@v2
+    #   with:
+    #     python-version: 3.7
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
+        # python -m pip install --upgrade pip
+        pip install flake8
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -31,3 +32,15 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Training
+      env:          
+        repo_token: ${{ secrets.GITHUB_TOKEN }}   
+      run: |
+        python train.py
+        # copy the contents of metrics.txt to our markdown report
+        cat metrics.txt >> report.md
+        # add our confusion matrix to report.md
+        cml-publish confusion_matrix.png --md >> report.md 
+        # send the report to GitHub for display
+        cml-send-comment report.md
+
