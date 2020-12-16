@@ -10,7 +10,7 @@ Repo used as module for automating ML projects training using GitHub actions.
 # Usage
 
 Copy and paste repo into your new project. Updates happens in:
-```
+```yml
   push:
     branches: [ master ]
   pull_request:
