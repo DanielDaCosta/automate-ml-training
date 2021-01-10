@@ -1,4 +1,4 @@
-# Automating ML training using GitHub actions
+# Automating ML model training using GitHub actions
 Repo used as module for automating ML projects training using GitHub actions.
 
 # Details
