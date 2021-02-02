@@ -8,8 +8,7 @@ Repo used as module for automating ML projects training using GitHub actions.
 - Saves metrix.txt and confusion_matrix.png in GitHub for display.
 
 # Usage
-
-Copy and paste repo into your new project. Updates happens in:
+Clone the repository, and update the following script on `.github/workflows/python-app.yml` with your own branches names:
 ```yml
   push:
     branches: [ master ]
